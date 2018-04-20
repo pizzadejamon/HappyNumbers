@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
 
 public class happyNumberCheckerTest {
     
@@ -16,14 +15,15 @@ public class happyNumberCheckerTest {
         //Teste Äquivalenzklassen
         assertFalse(happyNumberChecker.checker.isHappy(5));
         assertTrue(happyNumberChecker.checker.isHappy(10));
+        assertTrue(happyNumberChecker.checker.isHappy(49));
         
-        assertNull(happyNumberChecker.checker.isHappy(-1));
+        assertFalse(happyNumberChecker.checker.isHappy(-1));
         
         //Teste Grenzfälle
-        assertNull(happyNumberChecker.checker.isHappy(0));
+        assertFalse(happyNumberChecker.checker.isHappy(0));
         
         //Teste Intuitive Testfälle
-        assertNull(happyNumberChecker.checker.isHappy(999999999));
+        assertFalse(happyNumberChecker.checker.isHappy(999999999));
         
     }
     
