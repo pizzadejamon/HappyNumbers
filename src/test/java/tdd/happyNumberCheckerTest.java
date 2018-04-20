@@ -1,11 +1,11 @@
 
 package tdd;
 
-import happyNumberChecker.checker;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
 
 public class happyNumberCheckerTest {
     
@@ -27,4 +27,18 @@ public class happyNumberCheckerTest {
         
     }
     
+    @Test
+    public void testGetSum(){
+        //Teste Äquivalenzklassen
+        assertEquals(happyNumberChecker.checker.getDigitSquareSum(1), 1);
+        assertEquals(happyNumberChecker.checker.getDigitSquareSum(11), 2);
+        assertEquals(happyNumberChecker.checker.getDigitSquareSum(25), 29);
+        
+        assertEquals(happyNumberChecker.checker.getDigitSquareSum(-14), -1);
+        
+        //Teste Grenzfälle
+        assertEquals(happyNumberChecker.checker.getDigitSquareSum(0), 0);
+    }
 }
+    
+

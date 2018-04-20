@@ -8,20 +8,26 @@ public class checker {
   
         //Abbruchbedingungen
         if(number < 1)
-            return false;
+            return false; //Fail Fast
         
-        while(number != 1){
-            char[] digits = String.valueOf(number).toCharArray();
-            int summe = 0;
-            for(int i = 0; i < digits.length; i++){
-               int digit = Character.getNumericValue(digits[i]);
-               summe += digit * digit;
-            }
-            number = summe;
-            if(number == 4)
+        while((number = getDigitSquareSum(number)) != 1){
+            if(number == 4) //Unendliche Schleife erkannt
                 return false;
         }
-        return true;
+        return true; //Zahl ist Happy
+    }
+    
+    static public int getDigitSquareSum(int number){
+        if(number < 0)
+            return -1; //Fail Fast
+        
+        char[] digits = String.valueOf(number).toCharArray();
+        int summe = 0;
+        for(int i = 0; i < digits.length; i++){
+            int digit = Character.getNumericValue(digits[i]);
+            summe += digit * digit;
+        }
+        return summe;
     }
     
 }
