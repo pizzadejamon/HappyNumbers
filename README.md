@@ -17,9 +17,8 @@ bool isHappy(int n)
 Äquivalenzklassen:
 
 Parameter		|		Äquivalenzklasse						|		Repräsentant
-n						Natürliche Zahl ]0, ∞[					|		5
+n						Natürliche Zahl ]0, ∞[					|		5, 10
 n  						Negative Zahl   ]-∞, 0[					|		-10
-n						Rationale Zahl							|		3.141
 
 Grenzwert Tests:
 - Testen mit 0
